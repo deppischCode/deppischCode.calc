@@ -1,24 +1,24 @@
-export default function numberAssembler(template: string): Function {
+export default function numberAssembler(number: string): Function {
   return (digit: string): string => {
     switch (digit) {
       case ".":
-        if (template.includes(".")) return template;
+        if (number.includes(".")) return number;
         break;
       case "del":
-        template = template.substring(0, template.length - 1);
+        number = number.substring(0, number.length - 1);
 
-        if (template.length == 0) template = "0";
+        if (number.length == 0) number = "0";
 
-        return template;
+        return number;
       default:
         break;
     }
 
-    template += digit;
+    number += digit;
 
-    if (template.match(/^0\d+/))
-      template = template.substring(1);
+    if (number.match(/^0\d+/))
+      number = number.substring(1);
 
-    return template;
+    return number;
   }
 }

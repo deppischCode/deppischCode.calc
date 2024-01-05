@@ -1,21 +1,21 @@
-export default function numberAssembler(template) {
+export default function numberAssembler(number) {
     return (digit) => {
         switch (digit) {
             case ".":
-                if (template.includes("."))
-                    return template;
+                if (number.includes("."))
+                    return number;
                 break;
             case "del":
-                template = template.substring(0, template.length - 1);
-                if (template.length == 0)
-                    template = "0";
-                return template;
+                number = number.substring(0, number.length - 1);
+                if (number.length == 0)
+                    number = "0";
+                return number;
             default:
                 break;
         }
-        template += digit;
-        if (template.match(/^0\d+/))
-            template = template.substring(1);
-        return template;
+        number += digit;
+        if (number.match(/^0\d+/))
+            number = number.substring(1);
+        return number;
     };
 }

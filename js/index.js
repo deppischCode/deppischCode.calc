@@ -34,7 +34,7 @@ function uiInteraction(input) {
     case "0":
       calc.addToCurrent("0");
       break;
-    case ",":
+    case ".":
       calc.addToCurrent(".");
       break;
     case "+":
@@ -132,7 +132,10 @@ themeToggle.addEventListener("input", function (event) {
 });
 
 addEventListener("keydown", function (event) {
-  const input = event.key;
+  let input = event.key;
+
+  // imperial vs. metric
+  if (input == ",") input = ".";
 
   uiInteraction(input);
 });

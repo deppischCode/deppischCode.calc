@@ -138,6 +138,7 @@ main {
   font-family: "League Spartan bold";
   font-size: 3rem;
   padding: .2em;
+  overflow: hidden;
   text-align: right;
 }
 .operation-string {
