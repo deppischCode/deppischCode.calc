@@ -1,0 +1,186 @@
+@font-face {
+  font-family: "League Spartan";
+  src: url(../fonts/static/LeagueSpartan-Regular.ttf);
+  font-style: normal;
+  font-weight: 400;
+  unicode-range:U+0000-00FF
+}
+@font-face {
+  font-family: "League Spartan bold";
+  src: url(../fonts/static/LeagueSpartan-Bold.ttf);
+  font-style: normal;
+  font-weight: 400;
+  unicode-range:U+0000-00FF
+}
+
+:root {
+  --border-radius: .4rem;
+
+  font-family: "League Spartan";
+}
+
+.color-scheme-1 {
+  color: hsl(0, 0%, 100%);
+
+  --main-background: hsl(222, 26%, 31%);
+  --keypad-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+  --key-background-blue: hsl(225, 21%, 49%);
+  --key-background-blue-shadow: hsl(224, 28%, 35%);
+  --key-background-red: hsl(6, 63%, 50%);
+  --key-background-red-shadow: hsl(6, 70%, 34%);
+  --key-background-gray: hsl(30, 25%, 89%);
+  --key-background-gray-shadow: hsl(28, 16%, 65%);
+  --text-blue: hsl(221, 14%, 31%);
+  --text-white: hsl(0, 0%, 100%);
+}
+.color-scheme-2 {
+  color: hsl(0, 0%, 25%);
+
+  --main-background: hsl(0, 0%, 90%);
+  --keypad-background: hsl(0, 5%, 81%);
+  --screen-background: hsl(0, 0%, 93%);
+  --key-background-blue: hsl(185, 42%, 37%);
+  --key-background-blue-shadow: hsl(185, 58%, 25%);
+  --key-background-red: hsl(25, 98%, 40%);
+  --key-background-red-shadow: hsl(25, 99%, 27%);
+  --key-background-gray: hsl(45, 7%, 89%);
+  --key-background-gray-shadow: hsl(35, 11%, 61%);
+  --text-blue: hsl(60, 10%, 19%);
+  --text-white: hsl(0, 0%, 100%);
+}
+.color-scheme-3 {
+  color: hsl(52, 100%, 62%);
+
+  --main-background: hsl(268, 75%, 9%);
+  --keypad-background: hsl(268, 71%, 12%);
+  --screen-background: hsl(268, 71%, 12%);
+  --key-background-blue: hsl(281, 89%, 26%);
+  --key-background-blue-shadow: hsl(285, 91%, 52%);
+  --key-background-red: hsl(176, 100%, 44%);
+  --key-background-red-shadow: hsl(177, 92%, 70%);
+  --key-background-gray: hsl(268, 47%, 21%);
+  --key-background-gray-shadow: hsl(290, 70%, 36%);
+  --text-blue: hsl(52, 100%, 62%);
+  --text-white: hsl(0, 0%, 100%);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: transparent;
+}
+
+body {
+  background-color: var(--main-background);
+  margin: 0;
+  padding: 0;
+  min-width: 22.5em;
+}
+
+h1 {
+  align-self: center;
+  margin: 0;
+}
+
+label[for=theme-toggle] {
+  align-self: end;
+  font-size: .8rem;
+  font-weight: bold;
+  letter-spacing: .2em;
+  margin-right: 1em;
+  padding: .5em;
+  text-align: right;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100dvh;
+  min-height: 100vh;
+}
+
+.main-container {
+  display: grid;
+  row-gap: 1em;
+  flex-basis: 100%;
+  grid-template-columns: 2fr 1fr 4.25em;
+  margin-inline: auto;
+  padding: 1.5em;
+  min-width: 21em;
+  max-width: 30em;
+}
+
+.theme-toggle {
+  align-self: flex-end;
+  width: 100%;
+}
+.theme-toggle__stages {
+  display: flex;
+  font-size: .8em;
+  font-weight: bold;
+  justify-content: space-around;
+  margin-bottom: .5em;
+}
+.theme-toggle__stages * {
+  margin-inline: .3em;
+}
+
+.display {
+  background-color: var(--screen-background);
+  border-radius: var(--border-radius);
+  grid-column: 1 / span 3;
+  font-family: "League Spartan bold";
+  font-size: 3rem;
+  padding: .2em;
+  text-align: right;
+}
+.operation-string {
+  box-sizing: content-box;
+  font-family: "League Spartan";
+  font-size: .3em;
+  padding: .5em .3em;
+  height: .8em;
+}
+
+.keypad {
+  background-color: var(--keypad-background);
+  border-radius: var(--border-radius);
+  display: grid;
+  grid-column: 1 / span 3;
+  gap: .5em;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1.8em;
+  font-family: "League Spartan bold";
+  font-size: 2rem;
+  justify-content: space-between;
+  padding: .5em;
+}
+
+.button {
+  align-items: center;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+.button:hover {
+  filter: brightness(115%);
+}
+.button:active {
+  box-shadow: initial;
+  transform: scale(.99) translateY(.15em);
+}
+
+.button-1 {
+  color: var(--text-blue);
+}
+
+.button-2 {
+  grid-column: span 2;
+}

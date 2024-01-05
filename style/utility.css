@@ -1,0 +1,26 @@
+.bg-blue {
+  background-color: var(--key-background-blue);
+  box-shadow: 0 .15em 0 var(--key-background-blue-shadow);
+}
+
+.bg-gray {
+  background-color: var(--key-background-gray);
+  box-shadow: 0 .15em 0 var(--key-background-gray-shadow);
+}
+
+.bg-red {
+  background-color: var(--key-background-red);
+  box-shadow: 0 .15em 0 var(--key-background-red-shadow);
+}
+
+.clr-white {
+  color: var(--text-white);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.smaller {
+  font-size: 1.2rem;
+}
